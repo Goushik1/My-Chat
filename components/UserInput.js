@@ -7,7 +7,7 @@ const UserInput = ({
   name,
   evalid,
   setEvalid,
-  secureText,
+  secureKey,
 }) => {
   const [valid, setValid] = useState(false);
   useEffect(() => {
@@ -24,7 +24,7 @@ const UserInput = ({
       <TextInput
         placeholder={placeHolder}
         onChangeText={setUser}
-        secureTextEntry={secureText}
+        secureTextEntry={secureKey}
         value={name}
         style={
           placeHolder === "Email" && !valid && !evalid && name.length > 1

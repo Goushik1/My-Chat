@@ -14,10 +14,14 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 const auth = initializeAuth(app, {
   persistence: getReactNativePersistence(ReactNativeAsyncStorage),
 });
+
 const db = getFirestore(app);
 const colRef = collection(db, "chats");
-const storage = getStorage();
+
+const storage = getStorage(app);
+
 export { db, colRef, auth, storage };
